@@ -166,16 +166,16 @@
   vertical-align: middle;
   flex: 0 0 auto;
 }
-.badge-ok        { background: var(--status-ok);           color: var(--text-on-accent); }
+.badge-ok        { background: var(--status-ok);           color: var(--text-on-status); }
 .badge-ok-faded  { background: var(--status-ok-soft);      color: var(--status-ok); }
-.badge-info      { background: var(--status-info);         color: var(--text-on-accent); }
+.badge-info      { background: var(--status-info);         color: var(--text-on-status); }
 .badge-info-faded { background: var(--status-info-soft);    color: var(--status-info); }
-.badge-accent    { background: var(--status-accent);       color: var(--surface-canvas); }
+.badge-accent    { background: var(--status-accent);       color: var(--text-on-status); }
 .badge-accent-faded { background: var(--status-accent-soft); color: var(--status-accent); }
-.badge-merged    { background: var(--status-merged);       color: var(--text-on-accent); }
+.badge-merged    { background: var(--status-merged);       color: var(--text-on-status); }
 .badge-merged-faded { background: var(--status-merged-soft); color: var(--status-merged); }
 .badge-warn      { background: var(--status-warn-soft);    color: var(--status-warn); }
-.badge-bad       { background: var(--status-bad);          color: var(--text-on-accent); }
+.badge-bad       { background: var(--status-bad);          color: var(--text-on-status); }
 .badge-bad-faded { background: var(--status-bad-soft);     color: var(--status-bad); }
 
 .divider { height: 1px; background: var(--border); border: 0; margin: 0; }

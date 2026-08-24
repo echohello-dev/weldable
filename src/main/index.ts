@@ -19,7 +19,7 @@ async function applyLiquidGlass(handle: Buffer): Promise<void> {
   if (process.platform !== 'darwin') return
   try {
     const { default: liquidGlass } = await import('electron-liquid-glass')
-    liquidGlass.addView(handle, { cornerRadius: 12, tintColor: '#12121459' })
+    liquidGlass.addView(handle, { cornerRadius: 12 })
   } catch { /* glass unsupported on this macOS version — window stays transparent */ }
 }
 

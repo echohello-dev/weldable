@@ -5,6 +5,8 @@
  */
 
 :root {
+  color-scheme: dark;
+
   /* Surface ladder — neutral graphite, no blue cast */
   --surface-canvas:        #121214;   /* page background */
   --surface-recessed:      #0c0c0e;   /* deeper than canvas — rail backdrop, terminal canvas */
@@ -28,6 +30,12 @@
   --text-muted:            #b0aca4;
   --text-subtle:           #7d7a73;
   --text-on-accent:        #121214;
+  --text-on-status:        #121214;
+
+  /* Translucent macOS pane fills */
+  --glass-canvas:          rgba(18, 18, 20, 0.48);
+  --glass-topbar:          rgba(18, 18, 20, 0.72);
+  --glass-panel:           rgba(26, 26, 29, 0.68);
 
   /* Safety signal — reserved for actions and focus */
   --accent:                #f06a3c;
@@ -72,6 +80,51 @@
   --space-6:               24px;
   --space-7:               32px;
   --space-8:               40px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+
+    /* Warm drafting paper, not a clinical white inversion */
+    --surface-canvas:      #f3f0e8;
+    --surface-recessed:    #e6e1d6;
+    --surface-1:           #fbf9f3;
+    --surface-2:           #eeebe3;
+    --surface-3:           #e4dfd4;
+    --surface-4:           #d8d1c5;
+
+    --border:              #d7d0c4;
+    --border-strong:       #b9b0a3;
+    --border-soft:         rgba(18, 18, 20, 0.06);
+
+    --text:                #1b1b1d;
+    --text-muted:          #625e57;
+    --text-subtle:         #716c64;
+    --text-on-accent:      #121214;
+    --text-on-status:      #fffdf6;
+
+    --accent:              #e45f34;
+    --accent-soft:         rgba(228, 95, 52, 0.13);
+    --accent-strong:       #cf4f29;
+
+    --status-ok:           #1f7a62;
+    --status-ok-soft:      rgba(31, 122, 98, 0.12);
+    --status-info:         #3268a8;
+    --status-info-soft:    rgba(50, 104, 168, 0.12);
+    --status-accent:       #a65a00;
+    --status-accent-soft:  rgba(166, 90, 0, 0.12);
+    --status-merged:       #6f4eb8;
+    --status-merged-soft:  rgba(111, 78, 184, 0.12);
+    --status-warn:         #986100;
+    --status-warn-soft:    rgba(152, 97, 0, 0.12);
+    --status-bad:          #b72e36;
+    --status-bad-soft:     rgba(183, 46, 54, 0.12);
+
+    --glass-canvas:        rgba(243, 240, 232, 0.76);
+    --glass-topbar:        rgba(251, 249, 243, 0.84);
+    --glass-panel:         rgba(251, 249, 243, 0.78);
+  }
 }
 
 /* Colorway exploration — accent swaps from the icon colorway matrix.

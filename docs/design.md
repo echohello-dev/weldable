@@ -31,7 +31,7 @@ Hoist's chrome borrows directly from:
 
 The Hoist designs (in `design.pen`) lay out **five shells** (Three-pane · Sidebar-only · Tabs · Harness grid · CLI-first) and pick the Three-pane as the recommended shell. They document **three real surfaces** (Library · Harness Detail · Install Wizard) with the Library as the canonical harness-management view. The document also defines a **six-component grammar** (install status filled · install status outlined · action buttons · ⌘K command bar · harness table · terminal output) and a **four-card spec** (where each shell wins · one color one state · six tokens three status additions · posture rules).
 
-What we **don't** borrow: Light themes (Hoist is dark-only for now), decorative gradients, sidebars that are themselves apps (cf. 1Password's sidebar-of-vaults is *the* model).
+What we **don't** borrow: decorative gradients or sidebars that are themselves apps (cf. 1Password's sidebar-of-vaults is *the* model). Hoist follows the system appearance with graphite dark surfaces and warm drafting-paper light surfaces.
 
 ---
 
@@ -50,7 +50,7 @@ All values live in `src/renderer/styles/tokens.css`. Components consume them via
 --surface-4            #43434f   Selected row / focused surface
 ```
 
-Dark-only. Depth comes from surface ladder, never from drop shadows. Every chrome element is hairline-bordered against the surface below. The `--surface-recessed` token is reserved for the icon-only nav rail and the terminal code block — surfaces that should feel "behind" the active canvas.
+Both appearances use the same depth ladder. Dark mode uses graphite surfaces; light mode maps the ladder to warm paper and off-white panels. Depth comes from the ladder, never from drop shadows. Every chrome element is hairline-bordered against the surface below. The `--surface-recessed` token is reserved for the icon-only nav rail and the terminal code block, surfaces that should feel "behind" the active canvas.
 
 ### Rail + sidebar widths
 
@@ -409,7 +409,7 @@ These are open questions, not commitments:
 
 - **Auto-lock the vault** after idle (1Password's Quick Access `Cmd+Shift+Space` re-prompts for master password; we should mirror that for the renderer when keys are read).
 - **Discovered `.env` import** (1Password Watchtower pattern) — scan the user's filesystem for plaintext secrets, offer to vault them.
-- **Theme picker** (Linear onboarding step 2). Currently dark-only; "Hoist Dark" is the only theme. A "Hoist Light" with the same surface ladder is straightforward to add since we use CSS variables.
+- **Theme picker** (Linear onboarding step 2). Hoist currently follows the system light or dark appearance. A manual system/light/dark override can use the same token ladder.
 - **Multi-window support** — currently a single `BrowserWindow`. The IPC handler is already window-agnostic; the renderer would just need a per-window `App.tsx` state slice.
 - **Detail rail actions** — wire the buttons to actual IPC (Probe now → `probe.run`, Edit → opens a form, Delete → `vault.delete`).
 - **Settings panel** — surface-level settings (theme, auto-lock timeout, keytar backend toggle, GitHub repo for issue tracking) in a modal. Mirrors Claude Code's `/config` tabbed interface.

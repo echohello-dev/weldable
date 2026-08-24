@@ -620,15 +620,15 @@ body.is-col-resizing * {
 }
 .hoist-stat-card .badge-ok {
   background: var(--status-ok-soft);
-  color: #3dd68c;
+  color: var(--status-ok);
 }
 .hoist-stat-card .badge-bad {
   background: var(--status-bad-soft);
-  color: #ff7b72;
+  color: var(--status-bad);
 }
 .hoist-stat-card .badge-warn {
   background: var(--status-warn-soft);
-  color: #f0a000;
+  color: var(--status-warn);
 }
 .hoist-stat-sub {
   font-size: 12px;
@@ -684,7 +684,7 @@ body.is-col-resizing * {
 .hoist-catalogue-tile:hover { background: var(--surface-3); border-color: var(--border-strong); }
 .hoist-catalogue-tile.is-featured {
   background: var(--accent-soft);
-  border-color: rgba(21, 123, 243, 0.4);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 .hoist-catalogue-tile-icon {
   width: 40px; height: 40px;
@@ -1340,16 +1340,16 @@ body.is-col-resizing * {
 }
 .hoist-doctor-pill.is-error.is-hot {
   background: var(--status-bad-soft);
-  border-color: rgba(207, 34, 46, 0.35);
-  color: #ff7b72;
+  border-color: color-mix(in srgb, var(--status-bad) 35%, transparent);
+  color: var(--status-bad);
 }
-.hoist-doctor-pill.is-error.is-hot .hoist-doctor-pill-n { color: #ff7b72; }
+.hoist-doctor-pill.is-error.is-hot .hoist-doctor-pill-n { color: var(--status-bad); }
 .hoist-doctor-pill.is-warn.is-hot {
   background: var(--status-warn-soft);
-  border-color: rgba(240, 160, 0, 0.35);
-  color: #f0a000;
+  border-color: color-mix(in srgb, var(--status-warn) 35%, transparent);
+  color: var(--status-warn);
 }
-.hoist-doctor-pill.is-warn.is-hot .hoist-doctor-pill-n { color: #f0a000; }
+.hoist-doctor-pill.is-warn.is-hot .hoist-doctor-pill-n { color: var(--status-warn); }
 .hoist-doctor-pill.is-ok .hoist-doctor-pill-n { color: var(--status-ok); }
 
 .hoist-doctor-list {
@@ -1364,9 +1364,9 @@ body.is-col-resizing * {
   border-radius: var(--radius-card);
   overflow: hidden;
 }
-.hoist-doctor-card.is-error { border-color: rgba(207, 34, 46, 0.35); }
-.hoist-doctor-card.is-warn { border-color: rgba(240, 160, 0, 0.28); }
-.hoist-doctor-card.is-ok { border-color: rgba(45, 164, 78, 0.28); }
+.hoist-doctor-card.is-error { border-color: color-mix(in srgb, var(--status-bad) 35%, transparent); }
+.hoist-doctor-card.is-warn { border-color: color-mix(in srgb, var(--status-warn) 28%, transparent); }
+.hoist-doctor-card.is-ok { border-color: color-mix(in srgb, var(--status-ok) 28%, transparent); }
 
 .hoist-doctor-card-head {
   display: grid;
@@ -1644,7 +1644,7 @@ body.is-col-resizing * {
 }
 .hoist-form-error {
   margin: 0;
-  color: #ff7b72;
+  color: var(--status-bad);
   font-size: 12px;
 }
 
@@ -1681,7 +1681,7 @@ body.is-col-resizing * {
   min-width: 0;
 }
 .hoist-path-item.is-winner {
-  border-color: rgba(45, 164, 78, 0.45);
+  border-color: color-mix(in srgb, var(--status-ok) 45%, transparent);
   background: var(--status-ok-soft);
 }
 .hoist-path-item.is-current:not(.is-winner) {
@@ -1867,8 +1867,8 @@ select.input {
 }
 
 .hoist-sev-ok { color: var(--status-ok); font-weight: 600; }
-.hoist-sev-warn { color: #f0a000; font-weight: 600; }
-.hoist-sev-bad { color: #ff7b72; font-weight: 600; }
+.hoist-sev-warn { color: var(--status-warn); font-weight: 600; }
+.hoist-sev-bad { color: var(--status-bad); font-weight: 600; }
 
 /* ─── Harness configure panel ──────────────────────────────────── */
 
@@ -2011,8 +2011,8 @@ select.input {
 
 /* macOS liquid glass — panes go translucent so the window vibrancy reads through */
 html[data-platform='darwin'] .hoist,
-html[data-platform='darwin'] .hoist-main { background: transparent; }
-html[data-platform='darwin'] .hoist-topbar { background: rgba(18, 18, 20, 0.55); }
+html[data-platform='darwin'] .hoist-main { background: var(--glass-canvas); }
+html[data-platform='darwin'] .hoist-topbar { background: var(--glass-topbar); }
 html[data-platform='darwin'] .hoist-sidebar,
 html[data-platform='darwin'] .hoist-rail,
-html[data-platform='darwin'] .hoist-rail.hoist-rail { background: rgba(26, 26, 29, 0.42); }
+html[data-platform='darwin'] .hoist-rail.hoist-rail { background: var(--glass-panel); }
